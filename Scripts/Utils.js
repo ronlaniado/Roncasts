@@ -2,13 +2,21 @@ const baseSearchUrl = "https://itunes.apple.com/search?";
 const baseLookupUrl = "https://itunes.apple.com/lookup?";
 const podcastID = "1435741177";
 
+/**
+ * @description converts links with the RSS format to JSON format
+ * @param {string} link
+ */
 function rssToJSON(link) {
-	//convert an rss feed url to a json link
-	return link.replace(/rss/g, "json");
+  return link.replace(/rss/g, "json");
 }
+
+/**
+ * @description uses the base links to create a new link related to the podcast itself
+ * @param {string} baseUrl
+ * @param {string} id
+ */
 function concatLookupLink(baseUrl, id) {
-	//Uses the base links to create a new link related to the podcast itself.
-	return baseUrl + "id=" + id;
+  return baseUrl + "id=" + id;
 }
 
 export { rssToJSON, concatLookupLink };
