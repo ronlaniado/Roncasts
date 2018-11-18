@@ -1,20 +1,14 @@
-function sendGetRequest(url, callback) {
-	var request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.setRequestHeader("Content-Type", "appplication/json");
-	request.onreadystatechange = function() {
-		if (request.readyState === 4) {
-			const errored = request.status !== 200;
+const baseSearchUrl = "https://itunes.apple.com/search?";
+const baseLookupUrl = "https://itunes.apple.com/lookup?";
+const podcastID = "1435741177";
 
-			if (errored) console.log(request);
-
-			callback(request, errored);
-		}
-	};
-
-	request.send();
-
-	return request;
+function rssToJSON(link) {
+	//convert an rss feed url to a json link
+	return link.replace(/rss/g, "json");
+}
+function concatLookupLink(baseUrl, id) {
+	//Uses the base links to create a new link related to the podcast itself.
+	return baseUrl + "id=" + id;
 }
 
-export { sendGetRequest };
+export { rssToJSON, concatLookupLink };
