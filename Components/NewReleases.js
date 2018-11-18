@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { Icon } from "react-native-elements";
 import Ripple from "react-native-material-ripple";
-import { rssToJSON, concatLookupLink } from "../Scripts/Utils";
+import { rssToJSON, concatLookupLink } from "../scripts/Utils";
 
 export default class NewReleases extends React.Component {
   constructor(props) {
