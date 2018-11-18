@@ -1,5 +1,5 @@
 import React from "react";
-import NewReleases from "./Components/NewReleases";
+import NewReleases from "./components/NewReleases";
 
 export default class App extends React.Component {
 	render() {
